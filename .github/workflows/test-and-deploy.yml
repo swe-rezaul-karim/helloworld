@@ -38,3 +38,12 @@ jobs:
 
       - name: Display the test result
         run: cat test-results.txt
+
+      - name: Install dependencies 
+        run: npm install
+
+      - name: Start the Application
+        run: |
+          pm2 delete node-app || true
+          pm2 start "./src/server.js" --name node-app
+          pm2 save
