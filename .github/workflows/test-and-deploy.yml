@@ -17,7 +17,7 @@ jobs:
         run: npm install
         
       - name: Run test cases
-        run: npm run check | tree test-results.txt
+        run: npm run check | tee test-results.txt
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
